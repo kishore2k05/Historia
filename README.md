@@ -1,14 +1,14 @@
-# 🏛️ Historia — History Expert Chatbot
+# 🏛️ Historia — Japanese History Expert App
 
-A locally-running AI-powered history expert system built with **Llama 3.2**, **RAG (Retrieval-Augmented Generation)**, and a full-stack React + Node.js interface. Runs entirely on your machine — no cloud API costs.
+A locally-running AI-powered Japanese history expert app built with **Llama 3.2**, **RAG (Retrieval-Augmented Generation)**, and a plain HTML/CSS/JS frontend. Runs entirely on your machine — no cloud API costs.
 
 ---
 
 ## 🧠 What It Does
 
-- Answers history questions grounded in curated historical documents
+- Answers Japanese history questions grounded in curated historical documents
 - Uses RAG to retrieve relevant context before generating answers
-- Covers Ancient, Medieval, Modern, Political, Military, and Cultural history
+- Covers Feudal Japan, Shogunate, Samurai, Meiji Restoration, and more
 - Stays on-topic with expert-system guardrails via system prompting
 
 ---
@@ -16,9 +16,9 @@ A locally-running AI-powered history expert system built with **Llama 3.2**, **R
 ## 🏗️ Architecture
 
 ```
-React + Vite (Frontend)
+HTML/CSS/JS (Frontend)
         ↓
-Node.js / Express (API Gateway + Auth + Chat History)
+Node.js / Express (API Gateway + Chat History)
         ↓
 Python FastAPI (RAG Engine)
         ↓
@@ -33,12 +33,19 @@ Ollama — Llama 3.2 + nomic-embed-text (Local LLM)
 
 ```
 historia/
-├── frontend/         # React + Vite chat UI
-├── backend/          # Node.js + Express API gateway
-├── rag-engine/       # Python FastAPI + LangChain RAG pipeline
+├── frontend/
+│   ├── index.html        # Home page
+│   ├── topics.html       # Japanese history topics
+│   ├── ask.html          # Ask the Expert (AI Q&A)
+│   ├── about.html        # About the app
+│   ├── style.css         # Shared styles
+│   ├── script.js         # Shared JS (nav, API calls)
+│   └── images/           # Local images (samurai, castles etc.)
+├── backend/              # Node.js + Express API gateway
+├── rag-engine/           # Python FastAPI + LangChain RAG pipeline
 ├── data/
-│   └── history-docs/ # Your history PDFs and texts (gitignored)
-├── docs/             # Architecture diagrams, notes
+│   └── history-docs/     # History PDFs and texts (gitignored)
+├── docs/                 # Architecture diagrams, notes
 ├── docker-compose.yml
 └── README.md
 ```
@@ -74,11 +81,10 @@ npm install
 npm run dev
 ```
 
-### 4. Start the frontend
+### 4. Open the frontend
 ```bash
-cd frontend
-npm install
-npm run dev
+# Just open index.html in your browser
+open frontend/index.html
 ```
 
 ---
@@ -87,12 +93,23 @@ npm run dev
 
 | Layer | Technology |
 |---|---|
-| Frontend | React, Vite, TailwindCSS |
+| Frontend | HTML, CSS, Vanilla JS |
 | Backend | Node.js, Express, MySQL, Prisma |
 | RAG Engine | Python, FastAPI, LangChain, ChromaDB |
 | LLM | Llama 3.2 via Ollama |
 | Embeddings | nomic-embed-text via Ollama |
 | Container | Docker, Docker Compose |
+
+---
+
+## 📄 Pages
+
+| Page | Description |
+|---|---|
+| `index.html` | Home — hero section + topic preview cards |
+| `topics.html` | Full grid of Japanese history topics |
+| `ask.html` | Ask the Expert — AI powered Q&A |
+| `about.html` | About the app and how it works |
 
 ---
 
