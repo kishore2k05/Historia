@@ -6,7 +6,7 @@ A locally-running AI-powered Japanese history expert app built with **Llama 3.2*
 
 ## 🧠 What It Does
 
-- Answers Japanese history questions grounded in curated historical documents
+- Answers Japanese history questions grounded in curated historical documents.
 - Uses RAG to retrieve relevant context before generating answers
 - Covers Feudal Japan, Shogunate, Samurai, Meiji Restoration, and more
 - Stays on-topic with expert-system guardrails via system prompting
